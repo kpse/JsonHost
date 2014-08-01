@@ -1,0 +1,29 @@
+{
+  "name": "thoughtworks-ios",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "example": "examples",
+    "test": "test"
+  },
+  "dependencies": {
+    "chai": "^1.9.1"
+  },
+  "devDependencies": {
+    "mocha": "^1.21.3"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kpse/thoughtworks-ios.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kpse/thoughtworks-ios/issues"
+  },
+  "homepage": "https://github.com/kpse/thoughtworks-ios"
+}
