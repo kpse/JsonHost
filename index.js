@@ -1,32 +1,22 @@
-var http = require('http');
-var url = require("url");
-var fs = require("fs");
-var app = http.createServer(function (req, res) {
-  var pathname = url.parse(req.url).pathname;
-  console.log(pathname);
-  if (/\/(\w+)\.json/.test(pathname)) {
-    try {
-      if (fs.existsSync('.' + pathname)) {
-        res.writeHead(200, {'Content-Type': 'application/json'});
-        var fileJSON = require('.' + pathname);
-        res.end(JSON.stringify(fileJSON));
-      }
-      else {
-        defaultHandler(res)
-      }
-    } catch (e) {
-      defaultHandler(res)
-    }
-  }
-  else {
-    defaultHandler(res)
-  }
+var express = require('express');
+var app = express();
+
+app.set('json spaces', 2);
+
+app.get('/facts.json', function(req, res){
+  var fileJSON = require('./json/facts.json');
+  res.json(fileJSON);
 });
 
-function defaultHandler(res) {
-  res.statusCode = 403;
-  res.end('');
-}
+app.get('/long_facts.json', function(req, res){
+  var fileJSON = require('./json/long_facts.json');
+  res.json(fileJSON);
+});
+
+app.all('/*', function(req, res){
+  res.status(404).send('Sorry, we cannot find that!');
+});
+
 var port = Number(process.env.PORT || 5000);
 app.listen(port, function () {
   console.log("Listening on " + port);
