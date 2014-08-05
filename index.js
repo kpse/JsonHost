@@ -15,7 +15,7 @@ app.get('/long_facts.json', function (req, res) {
 
 app.get('/unstable_facts.json', function (req, res) {
   setTimeout()
-  if (Math.random() > 0.5) {
+  if (Math.random() > 0.33) {
     res.status(500).send('error!');
   } else {
     var fileJSON = require('./json/facts.json');
