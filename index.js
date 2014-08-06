@@ -15,12 +15,14 @@ app.get('/long_facts.json', function (req, res) {
 });
 
 app.get('/unstable_facts.json', function (req, res) {
-  if (random(1, 10) > 3) {
-    res.status(500).send('error!');
-  } else {
-    var fileJSON = require('./json/facts.json');
-    res.json(fileJSON);
-  }
+  random(1, 10).then(function(rate) {
+    if (rate > 4) {
+      res.status(500).send('error!');
+    } else {
+      var fileJSON = require('./json/facts.json');
+      res.json(fileJSON);
+    }
+  });
 
 });
 
@@ -31,14 +33,19 @@ function delay(ms) {
 }
 
 function random(min, max) {
-  return Math.ceil(Math.random()*(max-min)+min);
+  var deferred = Q.defer();
+  deferred.resolve(Math.ceil(Math.random()*(max-min)+min));
+  return deferred.promise;
 }
 
 app.get('/slow_facts.json', function (req, res) {
-  delay(random(1000, 10000)).then(function(){
-    var fileJSON = require('./json/facts.json');
-    res.json(fileJSON);
+  random(1000, 10000).then(function(ms){
+    delay(ms).then(function(){
+      var fileJSON = require('./json/facts.json');
+      res.json(fileJSON);
+    });
   });
+
 });
 
 app.all('/*', function (req, res) {
