@@ -1,5 +1,6 @@
-var express = require('express');
-var Q = require('q');
+var express = require('express')
+var utils = require('./lib/utils')
+
 var app = express();
 
 app.set('json spaces', 2);
@@ -15,7 +16,7 @@ app.get('/long_facts.json', function (req, res) {
 });
 
 app.get('/unstable_facts.json', function (req, res) {
-  random(1, 10).then(function(rate) {
+  utils.random(1, 10).then(function (rate) {
     if (rate > 4) {
       res.status(500).send('error!');
     } else {
@@ -26,21 +27,9 @@ app.get('/unstable_facts.json', function (req, res) {
 
 });
 
-function delay(ms) {
-  var deferred = Q.defer();
-  setTimeout(deferred.resolve, ms);
-  return deferred.promise;
-}
-
-function random(min, max) {
-  var deferred = Q.defer();
-  deferred.resolve(Math.ceil(Math.random()*(max-min)+min));
-  return deferred.promise;
-}
-
 app.get('/slow_facts.json', function (req, res) {
-  random(1000, 10000).then(function(ms){
-    delay(ms).then(function(){
+  utils.random(1000, 10000).then(function (ms) {
+    utils.delay(ms).then(function () {
       var fileJSON = require('./json/facts.json');
       res.json(fileJSON);
     });
