@@ -1,4 +1,5 @@
 var express = require('express');
+var Q = require('q');
 var app = express();
 
 app.set('json spaces', 2);
@@ -22,6 +23,23 @@ app.get('/unstable_facts.json', function (req, res) {
     res.json(fileJSON);
   }
 
+});
+
+function delay(ms) {
+  var deferred = Q.defer();
+  setTimeout(deferred.resolve, ms);
+  return deferred.promise;
+}
+
+function random(min, max) {
+  return Math.ceil(Math.random()*(max-min)+min);
+}
+
+app.get('/slow_facts.json', function (req, res) {
+  delay(random(1000, 10000)).then(function(){
+    var fileJSON = require('./json/facts.json');
+    res.json(fileJSON);
+  });
 });
 
 app.all('/*', function (req, res) {
