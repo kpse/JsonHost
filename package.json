@@ -1,28 +1,33 @@
 {
-  "name": "thoughtworks-ios",
+  "name": "ThoughtWorks-ios",
   "version": "0.0.1",
-  "description": "",
+  "description": "For iOS app data testing",
   "main": "index.js",
   "directories": {
     "example": "examples",
     "test": "test"
   },
   "dependencies": {
-    "chai": "^1.9.1",
-    "express": "^4.7.2",
-    "q": "^1.0.1"
+    "chai": "latest",
+    "express": "latest",
+    "q": "latest",
+    "forever": "latest"
   },
   "devDependencies": {
-    "mocha": "^1.21.3"
+    "supertest": "latest",
+    "should": "latest",
+    "mocha": "latest",
+    "nodemon": "latest"
   },
   "scripts": {
-    "test": "mocha"
+    "start": "NODE_ENV=development ./node_modules/.bin/nodemon index.js",
+    "test": "NODE_ENV=test ./node_modules/.bin/mocha --reporter spec --timeout 10000 test/**/*.js"
   },
   "repository": {
     "type": "git",
     "url": "git://github.com/kpse/thoughtworks-ios.git"
   },
-  "author": "",
+  "author": "kpsesuo",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/kpse/thoughtworks-ios/issues"
