@@ -17,7 +17,7 @@ describe("URLs", function () {
   })
 
   describe('GET /long_facts.json', function () {
-    it('should respond with Content-Type json', function (done) {
+    it('should respond with a long json', function (done) {
       agent
         .get('/long_facts.json')
         .expect('Content-Type', /json/)
@@ -28,7 +28,7 @@ describe("URLs", function () {
   })
 
   describe('GET /slow_facts.json', function () {
-    it('should respond with Content-Type json', function (done) {
+    it('should respond with json in 10 seconds', function (done) {
       agent
         .get('/slow_facts.json')
         .expect('Content-Type', /json/)
@@ -39,13 +39,14 @@ describe("URLs", function () {
   })
 
   describe('GET /unstable_facts.json', function () {
-    it('should respond with Content-Type json', function (done) {
+    it('should not be stable', function (done) {
       agent
         .get('/unstable_facts.json')
-        .expect('Content-Type', /json/)
-        .expect(200)
-        .expect(/"title":\s"About Canada"/)
-        .end(done)
+        .end(function(err, res){
+          if (res.status == 200 || res.status == 500)
+            return done();
+          throw new Error("Unexpected response other than 200 and 500.");
+        });
     })
   })
 });
