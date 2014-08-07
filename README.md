@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/kpse/JsonHost.png?branch=master)](https://travis-ci.org/kpse/JsonHost)
+
 ## Features
 - `facts.json` : This uri returns normal json with 14 records.
 - `long_facts.json` : This uri returns long json with 126 records.
