@@ -37,6 +37,16 @@ app.get('/slow_facts.json', function (req, res) {
 
 });
 
+app.get('/slow_facts_with_content.json', function (req, res) {
+  utils.random(1000, 10000).then(function (ms) {
+    utils.delay(ms).then(function () {
+      var fileJSON = require('./json/facts_with_content.json');
+      res.json(fileJSON);
+    });
+  });
+
+});
+
 app.all('/*', function (req, res) {
   res.status(404).send('Sorry, we cannot find that!');
 });
