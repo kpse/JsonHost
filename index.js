@@ -10,6 +10,16 @@ app.get('/facts.json', function (req, res) {
   res.json(fileJSON);
 });
 
+app.get('/user/jsmith/tweets', function (req, res) {
+  var fileJSON = require('./json/tweets.json');
+  res.json(fileJSON);
+});
+
+app.get('/user/jsmith', function (req, res) {
+  var fileJSON = require('./json/profile.json');
+  res.json(fileJSON);
+});
+
 app.get('/long_facts.json', function (req, res) {
   var fileJSON = require('./json/long_facts.json');
   res.json(fileJSON);
