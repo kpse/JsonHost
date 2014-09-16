@@ -185,6 +185,80 @@
         }
       }
     ]
+  },
+  {
+    "content": "第9条！",
+    "images": [
+      {
+        "url": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRDy7HZaHxn15wWj6pXE4uMKAqHTC_uBgBlIzeeQSj2QaGgUzUmHg"
+      },
+      {
+        "url": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTlJRALAf-76JPOLohBKzBg8Ab4Q5pWeQhF5igSfBflE_UYbqu7"
+      },
+      {
+        "url": "http://i.ytimg.com/vi/rGWI7mjmnNk/hqdefault.jpg"
+      }
+    ],
+    "sender": {
+      "username": "jhua",
+      "nick": "Joe Huang",
+      "avatar": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRJm8UXZ0mYtjv1a48RKkFkdyd4kOWLJB0o_l7GuTS8-q8VF64w"
+    },
+    "comments": [
+    ]
+  },
+  {
+    "content": "第10条！",
+    "sender": {
+      "username": "jhua",
+      "nick": "Joe Huang",
+      "avatar": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRJm8UXZ0mYtjv1a48RKkFkdyd4kOWLJB0o_l7GuTS8-q8VF64w"
+    },
+    "comments": [
+    ]
+  },
+  {
+    "content": "楼下保持队形，第11条",
+    "sender": {
+      "username": "jhua",
+      "nick": "Joe Huang",
+      "avatar": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRJm8UXZ0mYtjv1a48RKkFkdyd4kOWLJB0o_l7GuTS8-q8VF64w"
+    }
+  },
+  {
+    "content": "第12条",
+    "sender": {
+      "username": "jhua",
+      "nick": "Joe Huang",
+      "avatar": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRJm8UXZ0mYtjv1a48RKkFkdyd4kOWLJB0o_l7GuTS8-q8VF64w"
+    }
+  },
+  {
+    "content": "第13条",
+    "sender": {
+      "username": "jhua",
+      "nick": "Joe Huang",
+      "avatar": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRJm8UXZ0mYtjv1a48RKkFkdyd4kOWLJB0o_l7GuTS8-q8VF64w"
+    }
+  },
+  {
+    "content": "第14条",
+    "sender": {
+      "username": "jhua",
+      "nick": "Joe Huang",
+      "avatar": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRJm8UXZ0mYtjv1a48RKkFkdyd4kOWLJB0o_l7GuTS8-q8VF64w"
+    }
+  },
+  {
+    "unknown error": "STARCRAFT2"
+  },
+  {
+    "content": "- The data json will be hosted in http://thoughtworks-ios.herokuapp.com/- Nibs or storyboards are prohibited- Implement cache mechanism by you own if needed- Unit tests is appreciated.- Functional programming is appreciated- Deployment Target should be 7.0- Utilise Git for source control, for git log is the directly evidence of the development process- Utilise GCD for multi-thread operation- Only binary, framework or cocopods dependency is allowed. do not copy other developer's source code(*.h, *.m) into your project- Keep your code clean as much as possible",
+    "sender": {
+      "username": "qsuo",
+      "nick": "Louis",
+      "avatar": "http://farm1.staticflickr.com/134/325376313_4ed1988001.jpg"
+    }
   }
 ]
 
