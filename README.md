@@ -6,7 +6,9 @@
 - `unstable_facts.json` : This uri sometimes responds a 500 error rather than json.
 - `slow_facts.json` : This uri responds the request in 10 seconds.
 - `slow_facts_with_content.json`: This uri is existing for Android part 2 tasks.
-- `pagination_facts.json` : TODO
+
+- `/user/jsmith`: for new mobile assignment profile request
+- `/user/jsmith/tweets`: for new mobile assignment tweets request
 
 ## Contribution
 - run `npm test` before push the code
